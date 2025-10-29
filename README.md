@@ -8,6 +8,7 @@ Follow these steps to run it on your local machine.
 
 - [Python 3.10+](https://www.python.org/downloads/)
 - [PostgreSQL](https://www.postgresql.org/download/windows/)
+- [pgadmin]-> refer to the video sent in the gc
 - [Git](https://git-scm.com/downloads)
 
 ---
