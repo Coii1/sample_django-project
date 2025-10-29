@@ -1,0 +1,141 @@
+MVC - model view controller
+in django it's
+MVT - Model View(controller) Template(view)
+
+Django - Python web framework
+
+Set-up
+
+- install python 
+*python --version
+*pip --version 
+
+clone then repo then open terminal
+
+>> python -m venv env 
+    -this will create a virtual environment for the project
+>> venv\Scripts\activate
+    - to activate virtual environment
+
+>> pip install -r requirements.txt
+    - this will download all dependencies needed such as; django; psycopg2 
+    - this will make django available only in the virtual environment 
+    - do >> django-admin --version                to check if it's downloaded
+
+****>> django-admin startproject ProjectName  
+    - this will create a django project
+    - if you just cloned the repo, no need to do this.
+    - urls -> used to handle urls, obviously
+    - wsgi -> used to deply project to the server
+
+>>python manage.py runserver
+    - open the server in browser
+    - urls -> for routing
+    - secretkey -> for deployment on server
+    - debug -> should only be true for development. make false for production
+
+>>python manage.py startapp AppName
+    - this will make another folder for the App. folder AppName;ProjectName; and manage.py are on same level
+    - model ->for database
+    - views for control
+
+
+the moment you request to the django server/ you url (port:8000) it will search for the urls mapping 
+    - homepage -> "/"
+
+in app urls import path, include, and import views
+    -url patterns for different urls
+
+in project urls include app.urls 
+
+make templates folder for html
+
+go to settings import os and edit DIRS [os.path.join(BASE_DIR, 'templates')] so that django will se the templates
+now in app views you can return render(request, 'something.html', object)
+    - {{}} -> for dynamic code DTL
+
+base.html-> same as flask template using block extend in used html
+setting action in form will search url in views
+when you submit the form data from it will be sent as a request and given back as response
+
+GET vs POST
+
+{% csrf_token %} to use value from post
+
+static folder for the css, js, images
+go to settings.py add STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
+    # point to the project's top-level `static/` directory
+
+STATIC_ROOT -> for collectstatic for production
+
+now in html make href="{% static 'styles/something.css'%}" rel="stylesheet">
+                 href="https/something">
+
+
+
+Now let's make the html dynamic
+    - render(request, 'something.html', {'name': value})
+    - in html, use {{name}} to set the value of name
+
+now to create class, use Models (tutorial #12)
+    - from .models import ClassNamme
+    - now in views make obj1 = ClassName()
+    - obj1.img = 'name.jpg'
+    - render(request, 'something.html', {'name': obj1})
+    {% static "images" as baseUrl %}
+
+
+ORM
+    - convert python Objects/Class into database object/orw
+    - done with migrate
+
+>>DATABASE(Postgres)
+    - Download postgres and pgadmin
+    - settings.py change config to postgres
+    - psycopg2 to connect python and postgres
+    - now make class ClassName(models.Model)
+    - for image, use imageField and upload to foldername
+    - in installed apps, include 'projectname.apps.ProjectnameConfig'
+    - to work with images, use pip install Pillow
+
+>> python manage.py makemigrations
+    - to create a migrationfile
+    - write down the plan
+
+>> python manage.py projectname migrationfilename(0001)
+    - run a specific part of the plan manually
+
+>> python manage.py migrate
+    - carry out the plan
+
+for re-migrations 
+ - python manage.py makemigrations, python manage.py migrate
+
+now to use admin we need to create a superuser
+
+>>python manage.py help
+>>python manage.py createsuperuser
+
+register in admin.py the model so you can see it in admin page
+
+since we're accepting media files, we need a new folder, add 
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+in main urls add urlpatterns = urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+from django.conf import settings
+from django.conf.urls.static import static
+
+now add image through admin
+
+
+User registration
+-
+>> python manage.py startapp accounts
+add urls.py
+add path('register', views.register, name='register')
+add path('accounts/', include(accounts.urls)) in main urls 
+in html href="accounts/register"
+
+now setup views
