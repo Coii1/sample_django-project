@@ -21,6 +21,9 @@ cd <your-repo>
 3️⃣ Create and activate a virtual environment
 python -m venv env
 env\Scripts\activate
+If activation succeeds, your prompt will look like this:
+(env) C:\Users\YourName\project-folder>
+
 
 4️⃣ Install Django and other dependencies
 pip install -r requirements.txt
@@ -28,7 +31,7 @@ pip install -r requirements.txt
 5️⃣ Configure environment variables
 
 5.1. Copy the example file:
-->> copy .env.example .env
+>> copy .env.example .env
 
 5.2. Open .env and fill in your own settings:
 
@@ -39,6 +42,16 @@ DB_USER=your-db-user
 DB_PASSWORD=your-db-password
 DB_HOST=localhost
 DB_PORT=5432
+
+🔒 About the SECRET_KEY
+
+Each teammate should generate their own secret key — do not share yours publicly.
+
+They can create one quickly by running:
+>>python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+Then paste that into their .env file under:
+
+SECRET_KEY=generated-key-here
 
 6️⃣ Setup PostgreSQL database
 
@@ -82,12 +95,11 @@ View images and uploaded files.
 
 Access the admin dashboard.
 
-🔒 About the SECRET_KEY
+🧾 Notes
 
-Each teammate should generate their own secret key — do not share yours publicly.
+The .env file stores private configuration, such as database credentials and the secret key.
+It is not pushed to GitHub for security reasons.
 
-They can create one quickly by running:
->>python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
-Then paste that into their .env file under:
+.env.example acts as a template to show what variables are needed.
 
-SECRET_KEY=generated-key-here
+PostgreSQL and pgAdmin must be installed system-wide, while Django and other dependencies are installed inside your virtual environment.
