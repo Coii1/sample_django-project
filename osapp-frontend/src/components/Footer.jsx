@@ -48,7 +48,7 @@ function Footer() {
                 </div>
             </div>
 
-            {/* Bottom Footer */}
+            {/* Black Footer */}
             <div className='bottomFooter'>
                 <Link to='/aboutus'>About Us</Link>
                 <Link to='/termsofservice'>Terms of Service</Link>
