@@ -1,0 +1,18 @@
+.addRequirementBtn {
+    background: #700000;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.addRequirementBtn:hover {
+    opacity: 0.9;
+    background-color: #700000;
+}
+
+.requirement-section{
+  border: 2px solid rgb(118, 118, 118);       /* creates a visible box border */
+  border-radius: 0px;            /* optional: rounded corners */
+}
