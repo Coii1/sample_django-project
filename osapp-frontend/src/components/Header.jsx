@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FaChevronDown } from 'react-icons/fa'
 import upvLogo from '../assets/upvlogo.png'
-import '../styles/DashboardHeader.css'
+import '../styles/Header.css'
 
 function Header() {
     return(
