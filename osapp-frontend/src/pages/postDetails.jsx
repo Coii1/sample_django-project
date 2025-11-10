@@ -6,39 +6,61 @@ import Footer from '../components/Footer.jsx'
 
 function PostDetails() {
     return(
-
-        <>
+        <div className='postDetails'>
             <Header />
 
-            <div>
-                <h2>Post new scholarship</h2>
-                <label htmlFor="title">Scholarship title*</label>
-                <input type="text"  id="title"/>
+            <div className='postScholarshipContent'>
 
-                <label htmlFor="numSlots">Number of Slots*</label>
-                <input type="number" id="numSlots"/>
-                
-                <label htmlFor="qualifications">Qualifications*</label>
-                <input type="text" id = "qualifications"/>
+                <div className='postScholarshipForm'>
 
-                <label htmlFor="benefits">Benefits*</label>
-                <input type="text" id = "benefits"/>
+                    <h2>Post new scholarship</h2>
 
-                <label htmlFor="instructions">Instructions*</label>
-                <input type="text" id = "instructions"/>
+                    <div class="mb-3">
+                        <label className='required form-label' htmlFor="title">Scholarship title</label>
+                        <input type="text" class="form-control" id="title" required/>
+                    </div>
 
-                <label htmlFor="requirements">Scholarship Requirements*</label>
-                <input type="text" id = "requirements"/>
+                    <div className='mb-3'>
+                        <label className='required form-label' htmlFor="numSlots">Number Of Slots Available</label><br/>
+                        <input type="number" id="numSlots" min={1} max={1000} required/><br/>
+                    </div>
 
-            </div>
+                    <div class="mb-3">
+                        <label htmlFor="qualifications" className="required form-label">Qualifications</label>
+                        <textarea class="form-control" id="qualifications" rows="5"required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label htmlFor="benefits" className="required form-label">Benefits</label>
+                        <textarea class="form-control" id="benefits" rows="5"required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label htmlFor="instructions" className="required form-label">Instructions</label>
+                        <textarea class="form-control" id="qualifications" rows="5"required></textarea>
+                    </div>
+
+                    <div className='formContainer'>
+                        <label className='required' htmlFor="requirements">Deadline</label><br/>
+                        <input type="date" id = "deadline" required/><br/>
+                    </div>
+
+                    <div className='formContainer'>
+                        <label className='required' htmlFor="requirements">Scholarship Requirements</label><br/>
+                        <input type="text" id = "requirements" required/><br/>
+                    </div>
+
+                </div>
  
-            <div className = "requirement-section">
-
-                <button className='addRequirementBtn'>Add</button>
-            </div>           
+                <div className = "requirement-section">
+                    <button className='addRequirementBtn'>Add</button>
+                </div>  
+            </div>
+            
+                     
 
             <Footer />
-        </>
+        </div>
     )
 }
 
