@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'      // reference to a DOM element for scrolling
-import { FaChevronDown } from 'react-icons/fa'
-import Header from '../components/DashboardHeader.jsx'
+
+import DashboardHeader from '../components/DashboardHeader.jsx'
 import HeroSection from '../components/HeroSection.jsx'
 import Accordion from '../components/Accordion.jsx'
 import Footer from '../components/Footer.jsx'
@@ -23,7 +23,7 @@ function Scholarships() {
 
     return (
         <div className="scholarshipsPage">
-            <Header />
+            <DashboardHeader />
 
             <HeroSection scrollToSection={scrollToContent} />
 

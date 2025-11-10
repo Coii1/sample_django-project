@@ -95,8 +95,6 @@
     width: 100%;
 }
 
-/* ACCORDION */
-
 .scholarshipsPage {
     display: flex;
     flex-direction: column;
@@ -139,6 +137,8 @@
     border-radius: 5px;
     padding: 5px 8px 5px 8px;
 }
+
+/* ACCORDION */
 
 .accordionContainer {
     display: block;

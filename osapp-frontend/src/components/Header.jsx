@@ -1,14 +1,16 @@
 import { Link } from 'react-router-dom'
 import { FaChevronDown } from 'react-icons/fa'
+import { IoNotifications } from "react-icons/io5";
+import { CgProfile } from "react-icons/cg";
 import upvLogo from '../assets/upvlogo.png'
 import '../styles/Header.css'
 
 function Header() {
     return(
-        <header className='header'>
-            <Logo />
-
-            <nav className='roboto-header-right'>
+        <header className='main-header'>
+            
+            <nav className='headerLeft'>
+                <Logo />
                 <Link to='/'>Home</Link>
 
                 <div className='dropdown'>
@@ -16,8 +18,21 @@ function Header() {
                         Downloads <FaChevronDown className="chevronDown"/>
                     </button>
                 </div>
-                <Link to="/login">Login</Link>
-                <Link to="/signup" className='signupBtn'>Sign Up</Link>
+            </nav>
+            
+            <nav className='roboto-header-right'>
+                
+                <div className='notifications'>
+                    <button className='notifBtn'>
+                        <IoNotifications />
+                    </button>
+                </div>
+
+                <div className='profile'>
+                    <Link to="/profile" className='profileBtn' target='_blank' rel='noreferrer'>
+                        <CgProfile />
+                    </Link>
+                </div> 
             </nav>
 
         </header>
@@ -31,10 +46,10 @@ function Logo() {
                 <img src={ upvLogo } alt='UPV Logo' className='upvLogo' />
             </div>
             
-            <div className='source-serif-4-header'>
+            {/* <div className='source-serif-4-header'>
                 <h2>UPV Office of Student Affairs</h2>
                 <h3>Scholarships and Financial Assistance Unit</h3>
-            </div>
+            </div> */}
         </div>
     )
 }
