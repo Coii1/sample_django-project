@@ -7,7 +7,7 @@ import '../styles/Header.css'
 
 function Header() {
     return(
-        <header className='main-header'>
+        <header className='header'>
             
             <nav className='headerLeft'>
                 <Logo />
@@ -46,10 +46,6 @@ function Logo() {
                 <img src={ upvLogo } alt='UPV Logo' className='upvLogo' />
             </div>
             
-            {/* <div className='source-serif-4-header'>
-                <h2>UPV Office of Student Affairs</h2>
-                <h3>Scholarships and Financial Assistance Unit</h3>
-            </div> */}
         </div>
     )
 }
