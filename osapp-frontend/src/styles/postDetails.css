@@ -1,3 +1,83 @@
+.postDetails {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+
+.postScholarshipContent {
+	width: 100%;
+    max-width: 1200px;
+	height: 90.875rem;
+	flex-shrink: 0;
+	margin: 2rem 2rem 2rem 2rem; 
+    padding: 0 0 0 30px; 
+}
+
+.formContainer {
+	margin: 1rem;
+}
+
+.postScholarshipForm h2 {
+	display: flex;
+	width: 46.375rem;
+	height: 4.125rem;
+	flex-direction: column;
+	justify-content: center;
+	color: var(--MAROON, #8A1538);
+	font-family: Montserrat;
+	font-size: 2rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+
+.postScholarshipForm input {
+	/* width: 60.9375rem; */
+	border-radius: 5px;
+	border: 1px solid #767676;
+}
+
+.postScholarshipForm label {
+	color: var(--MAROON, #8A1538);
+	font-family: "Roboto", sans-serif;
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	padding-bottom: 0.50rem;
+}
+
+.required::after {
+	content: "*";
+	color: var(--MAROON);
+	font-size: 0.90rem;
+	vertical-align: super;
+}
+
+/* input[type="text"] {
+	box-sizing: border-box;
+	padding: 2px 2px 2px 6px;
+	font-size: 14px;
+	width: 60.9375rem;
+} */
+
+.postScholarshipForm input,
+.postScholarshipForm textarea {
+    width: 60.9375rem;   
+    max-width: 100%;     
+    border-radius: 5px;
+    border: 1px solid #9d9b9b;
+    box-sizing: border-box;
+    padding: 0.5rem;     
+    font-size: 14px;
+}
+
+#qualifications,#benefits, #instructions {
+	height: 3.4375rem;;
+}
+
+
 .addRequirementBtn {
     background: #700000;
     color: white;

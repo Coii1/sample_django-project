@@ -3,9 +3,9 @@ import { FaChevronDown } from 'react-icons/fa'
 import upvLogo from '../assets/upvlogo.png'
 import '../styles/DashboardHeader.css'
 
-function Header() {
+function DashboardHeader() {
     return(
-        <header className='header'>
+        <header className='main-header'>
             <Logo />
 
             <nav className='roboto-header-right'>
@@ -38,4 +38,4 @@ function Logo() {
         </div>
     )
 }
-export default Header
+export default DashboardHeader
