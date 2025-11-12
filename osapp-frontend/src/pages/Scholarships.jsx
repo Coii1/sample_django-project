@@ -25,7 +25,12 @@ function Scholarships() {
         <div className="scholarshipsPage">
             <DashboardHeader />
 
-            <HeroSection scrollToSection={scrollToContent} />
+            <HeroSection 
+                title=<>AVAILABLE<br/>SCHOLARSHIPS</> 
+                height='384px'
+                showChevron = {true}
+                scrollToSection={scrollToContent} 
+            />
 
             <div ref={contentRef} className="scholarshipsContent">
 

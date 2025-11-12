@@ -10,7 +10,6 @@ import NotFound from './pages/NotFound.jsx'
 import StaffDashboard from './pages/StaffDashboard.jsx'
 
 function App() {
-//   const [count, setCount] = useState(0)
 
   return (
   	<BrowserRouter>
@@ -19,15 +18,17 @@ function App() {
 			<Route path="/" element={ <Scholarships/> } />
 			<Route path="/posts" element={ <Posts/> } />
             <Route path="/postDetails" element={ <PostDetails/> } />
+			<Route path='/staffDashboard' element={<StaffDashboard/>} />
+
 
 			{/* Protected routes - Pages that should only be accessed after signing up/logging in*/}
-			<Route path='/staffdashboard' element={
+			{/* <Route path='/staffdashboard' element={
 				<ProtectedRoute allowedRoles={ ["admin"] }>
 					
 					<StaffDashboard />
 
 				</ProtectedRoute>
-			} />
+			} /> */}
 			
             {/* <Route path='/studentdashboard' element={
 				<ProtectedRoute allowedRoles={ ["student"] }>
@@ -37,8 +38,6 @@ function App() {
 
 			<Route path="/registerandlogout" element={ <RegisterAndLogout/> } />
 			<Route path="*" element={ <NotFound /> } />
-
-            
         </Routes>
     </BrowserRouter>
   )
