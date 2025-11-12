@@ -1,20 +1,29 @@
 import { FaChevronDown } from 'react-icons/fa'
 import upvCampus from '../assets/upvcampus.jpg'
-import '../styles/Scholarships.css'
+import '../styles/HeroSection.css'
 
-function HeroSection() {
+function HeroSection( { title, height = '384px', showChevron = true, scrollToSection } ) {
     return(
-        <section className='heroSection'>
+        <section className='heroSection' 
+                 style={{ '--hero-img-height': height }}>
+
             <img src={ upvCampus } className='upvCampus' alt="UP Visayas Campus"/>
 
             <div className='heroContent'>
-                <div className='availScholarships'>
-                    <h1 className='montserrat-header'>AVAILABLE<br/>SCHOLARSHIPS</h1>
+                <div className='headerContainer'>
+                    <h1 className='montserrat-header'>{title}</h1>
                 </div>
 
-                <div className="downBtn">
+                { showChevron && (
+                    <button className='downBtn' onClick={scrollToSection}>
+                        <FaChevronDown className="heroChevronDown"/>
+                    </button>
+                    )
+                }
+
+                {/* <div className="downBtn">
                     <FaChevronDown className="heroChevronDown"/>
-                </div>
+                </div> */}
             </div>
         </section>
     )
